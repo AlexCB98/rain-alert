@@ -23,8 +23,13 @@ data = response.json()
 
 weather_data = data['list']
 
+will_rain = False
+
 for forecast in weather_data:
     weather_id = forecast['weather'][0]['id']
 
     if weather_id < 700:
-        print('Bring an Umbrella')
+        will_rain = True
+
+if will_rain:
+    print('Bring an Umbrella')
