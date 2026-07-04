@@ -1,15 +1,16 @@
 import requests
 import smtplib
+import os
 
 #https://openweathermap.org/
-API_KEY = 'YOUR_API_KEY'
+API_KEY = os.environ.get('OPENWEATHER_API_KEY')
 
 # https://www.latlong.net/
 LAT = 48.669102
 LONG = 12.690720
 
-MY_EMAIL = 'Example@gmail.com'
-MY_PASSWORD = 'Your_password'
+MY_EMAIL = os.environ.get('MY_EMAIL')
+MY_PASSWORD = os.environ.get('MY_PASSWORD')
 
 parameters = {
     'lat': LAT,
